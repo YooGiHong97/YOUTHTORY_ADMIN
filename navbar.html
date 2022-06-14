@@ -11,12 +11,19 @@
 
     <title>ADMIN NAVBAR</title>
 
+    <!-- <script type="text/javascript">	
+    function getIP(json) {		
+        document.write(json.ip);	
+        }
+    </script>
+    <script type="text/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script> -->
     <!---------------------------------------------------------------------------------------------------------------------------->
     <!-- css 위치  -->
     <!---------------------------------------------------------------------------------------------------------------------------->
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!---------------------------------------------------------------------------------------------------------------------------->
+
 
 </head>
 
@@ -34,21 +41,22 @@
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="#">공지사항</a</li>
+                    <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="#">교육</a></li>
                 </ul>
             </li>
             <li style="font-size: 19px;"><a href="./freeboard-list.html" class="nav-main-con">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do" class="nav-main-con">참여</a>
                 <ul class="navbar_submenu">
-                    <li><a href="#">의제발굴</a></li>
-                    <li><a href="#">의제발굴(어린이)</a></li>
-                    <li><a href="#">정책제안</a></li>
-                    <li><a href="#">정책제안(어린이)</a></li>
+                    <li><a href="excavation-list.html">의제발굴</a></li>
+                    <li><a href="excavation-list-chil.html">의제발굴(어린이)</a></li>
+                    <li><a href="suggest-list.html">정책제안</a></li>
+                    <li><a href="suggest-list-chil.html">정책제안(어린이)</a></li>
                 </ul>
             </li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do" class="nav-main-con">공유설문</a></li>
-            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do" class="nav-main-con">회원정보</a></li>
+            <li style="font-size: 19px;"><a href="user-info-list.html">회원정보</a></li>
+            <!-- <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do">회원정보</a></li> -->
             <c:choose>
         <c:when test="${loginInfo==null}">
                     

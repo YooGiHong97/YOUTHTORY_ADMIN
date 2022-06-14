@@ -52,14 +52,15 @@
             <li style="font-size: 19px;"><a href="./freeboard-list.html" class="nav-main-con">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do" class="nav-main-con">참여</a>
                 <ul class="navbar_submenu">
-                    <li><a href="">의제발굴</a></li>
-                    <li><a href="">의제발굴(어린이)</a></li>
-                    <li><a href="">정책제안</a></li>
-                    <li><a href="">정책제안(어린이)</a></li>
+                    <li><a href="excavation-list.html">의제발굴</a></li>
+                    <li><a href="excavation-list-chil.html">의제발굴(어린이)</a></li>
+                    <li><a href="suggest-list.html">정책제안</a></li>
+                    <li><a href="suggest-list-chil.html">정책제안(어린이)</a></li>
                 </ul>
             </li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do" class="nav-main-con">공유설문</a></li>
-            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do" class="nav-main-con">회원정보</a></li>
+            <li style="font-size: 19px;"><a href="user-info-list.html">회원정보</a></li>
+            <!-- <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do">회원정보</a></li> -->
             <c:choose>
         <c:when test="${loginInfo==null}">
                     
