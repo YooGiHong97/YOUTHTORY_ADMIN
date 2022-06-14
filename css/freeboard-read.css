@@ -1,0 +1,81 @@
+/* 배너 이미지 및 TEXT 중앙정렬 */
+.main_container{
+    background-image: url(../images/gnb-image.png);
+    height:35vw;
+    background-size:cover;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align:center;
+}
+.main-sec-1{
+    font-size:2.5rem;
+    border-bottom:2px solid black;
+}
+
+@media screen and (min-width:768px){
+    .main_container{
+        background-image: url(../images/gnb-image.png);
+        height:12vw;
+        background-size: cover;
+    }
+}
+/*********************************************************/
+@media screen and (max-width:768px){
+
+.list-main-cont{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+}
+
+    .proposal{
+    list-style: none; margin-bottom: 6%;  border: 1px solid #C6C6C6; width: 800px; height: 170px; border-radius: 10px;
+    }
+    .proposal:hover {
+    list-style: none; margin-bottom: 6%;  border: 3px solid #62986E; width: 800px; height: 170px; border-radius: 10px;
+    }
+    .proposal_none{
+    list-style: none;
+    }
+    /* <!-- 모든 버튼에대한 css설정 --> */
+    .btn{ 
+          text-decoration: none;
+          font-size:2rem;
+          color:white;
+          padding:10px 20px 10px 20px;
+          margin:20px;
+          display:inline-block;
+          
+          transition:all 0.1s;
+        }
+        .btn:active{
+          transform: translateY(3px);
+        }
+        .btn.green{
+          background-color: #5FC587;
+          border-bottom:5px solid #5FC587;
+        }
+        .btn.green:active{
+          border-bottom:5px solid #5FC587;
+        }
+        .btn.red{
+          background-color: #D3414D;
+          border-bottom:5px solid #D3414D;
+        }
+        .btn.red:active{
+          border-bottom:5px solid #D3414D;
+        }
+        .btn.black{
+          background-color: #666666;
+          border-bottom:5px solid #666666;
+          margin-left: 78%;
+        }
+        .btn.black:active{
+          border-bottom:5px solid #666666;
+        }
+

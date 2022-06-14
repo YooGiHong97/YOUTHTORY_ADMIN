@@ -1,0 +1,185 @@
+
+li, ul{
+    list-style: none;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    background-color: #FFFFFF;
+    padding: 8px 12px;
+    margin-bottom: 1px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+.navbar a:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.navbar__logo {
+    color: cadetblue;
+    text-align:center; 
+    margin-left:12%;
+}
+.navbar__logo .total-user{
+    font-size: 15px;
+    margin-left:30px;
+}
+/* 메인로고 이미지 사이즈 */
+.nbar{
+    width:225px;
+}
+
+
+.navbar__menu li {
+    padding: 10px 20px;
+}
+
+/* navbar submenu 숨기기 */
+.navbar li ul{
+    display:none; 
+    height:auto;
+    border:0px;
+    position:absolute;
+    width:200px;
+    z-index:200;
+    /*top:1em;
+    /*left:0;*/
+    margin-top:8px;
+    margin-left:-13px;
+    }
+    .navbar ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+    .navbar li:hover ul{
+        display:block;
+    }
+
+    .navbar li li {
+        background: #fff;
+        display:block;
+        float:none;
+        margin:0px;
+        padding:0px;
+        width:155px;
+    }
+    .navbar li:hover li a{
+        background:none;
+    }
+    .navbar li ul a{
+        display:block;
+        font-size:1.65rem;
+        margin:0px;
+        padding:30px 0 0 5px;
+        text-align:left;
+    }
+    .navbar li ul a:hover, .navbar li ul li:hover a{
+        border:0px;
+        color:#000;
+        text-decoration: underline;
+        text-underline-position: under;
+    }
+    .navbar li ul a{
+        text-decoration: none;
+    }
+        
+        .navbar p{
+        clear:left;
+    }
+
+.navbar__icons {
+    list-style: none;
+    display :flex;
+    color:white;
+    padding-left: 0px;
+}
+
+.navbar__icons li {
+    /* padding: 8px 12px; */
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.navbar__menu li {
+    padding: 8px 13px;
+    float:left;
+}
+
+.navbar__menu li a {
+   width:136px;
+}
+
+.navbar__menu li:hover {
+    background: #f9f9f9;
+    z-index:201;
+}
+
+.nav-main-con{
+    color:#000;
+}
+
+.navbar__menu .nav-main-con:hover {
+    /* background-color : rgb(87, 170, 166); */
+    border-radius: 5px;
+    z-index:201;
+}
+
+.navbar__icons li {
+    padding : 10px;
+}
+
+.navbar__toggleBtn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding : 10px 24px;
+    }
+    
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icons{
+        display: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar__toggleBtn {
+        display: block;
+        position: absolute;
+        right : 20px;
+        font-size: 24px;
+        color :rgb(87, 170, 166);
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+        transition: 1s ease-out;
+    }
+}

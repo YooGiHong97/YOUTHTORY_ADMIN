@@ -1,0 +1,223 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page trimDirectiveWhitespaces="true"%> -->
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>FREEBOARD LIST</title>
+
+            <!---------------------------------------------------------------------------------------------------------------------------->
+            <!-- css 위치  -->
+            <!---------------------------------------------------------------------------------------------------------------------------->
+            <link rel="stylesheet" href="./css/navbar.css">
+            <link rel="stylesheet" href="./css/freeboard-list.css">
+            <link rel="stylesheet" href="./css/bootstrap.min.css">
+            <!---------------------------------------------------------------------------------------------------------------------------->
+            <!-- bootstrap -->
+            <link href="${pageContext.request.contextPath}/asset/js/bootstrap.min.js" rel="stylesheet"/>
+            <link href="${pageContext.request.contextPath}/asset/css/bootstrap.min.css" rel="stylesheet"/>
+            <!---------------------------------------------------------------------------------------------------------------------------->
+
+        </head>
+
+<body>
+
+<!-- <%@ include file="/WEB-INF/views/inc/navbar.jsp" %> -->
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- NAVBAR 아코디언 메뉴 -->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <nav class="navbar" > 
+        <div class="navbar__logo">
+            <a href="/navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
+            <span class="total-user"> 총 방문자수 : </span>
+        </div>
+
+        <ul class="navbar__menu">
+            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
+                <ul class="navbar_submenu">
+                    <li><a href="">공지사항</a</li>
+                    <li><a href="">교육</a></li>
+                </ul>
+            </li>
+
+            <li style="font-size: 19px;"><a href="./freeboard-list.html">자율게시판</a></li>
+            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do">참여</a>
+                <ul class="navbar_submenu">
+                    <li><a href="">의제발굴</a></li>
+                    <li><a href="">의제발굴(어린이)</a></li>
+                    <li><a href="">정책제안</a></li>
+                    <li><a href="">정책제안(어린이)</a></li>
+                </ul>
+            </li>
+
+            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do">공유설문</a></li>
+            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/sharesurvey/admin_sharesurvey_list.do">회원정보</a></li>
+            <c:choose>
+        <c:when test="${loginInfo==null}">
+                    
+                
+                </c:when>
+        <c:otherwise>
+            <!-- 로그인 된 경우 -->               
+			<li style="font-size: 14px;margin-top: 4px; margin-left: 15px;"><a href="${pageContext.request.contextPath}/user/admin_logout.do">로그아웃</a></li>
+			<!-- <%-- <button class="logout" onclick="location.href='${pageContext.request.contextPath}/user/admin_logout.do'">로그아웃</button> --%> -->
+				
+      <!-- // 로그인 된 경우 -->
+        </c:otherwise>
+      </c:choose>
+        </ul>
+        <ul class="navbar__icons">
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+        </ul>
+
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+    <div style="border: 1px solid #C6C6C6; margin-top:-20px;"></div>
+    <!---------------------------------------------------------------------------------------------------------------------------->
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- 자율게시판 메인 컨테이너  -->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 배너이미지 / 자율게시판 배너텍스트 -->
+    <section>
+        <div class="container-fluid main_container">
+            <div class="main_content">
+                <div class="col-12 main-sec-1"><b>자율게시판</b></div>
+            </div>
+        </div>
+    </section>
+  <!---------------------------------------->
+            <section>
+                <div class="container list-main-cont" style="margin-left: 20%; width: 60%; margin-top:2%;">
+                    <table id="mscorelist" class="table table-spriped table table-condensed table table-hover">
+                        <thead style="border-bottom: 2px solid #4B9A6A; border-top: 2px solid #4B9A6A;" >
+                            <tr style="height: 50px;">
+                                <th style="vertical-align: middle;width: 0.3%; font-size:1.8rem; padding-top:10px; color: #4B9A6A;" class="text-center">No.</th>
+                                <th style="vertical-align: middle;width: 10% ; font-size:1.8rem; padding-top:10px;  color: #4B9A6A;">제목</th>
+                                <th style="vertical-align: middle;width: 0.5%; font-size:1.8rem; padding-top:10px; color: #4B9A6A;" class="text-center">작성일</th>
+                                <th style="vertical-align: middle;width: 0.5%; font-size:1.8rem; padding-top:10px; color: #4B9A6A;" class="text-center">조회수</th>       
+                            </tr> 
+                        </thead>
+              <tbody>
+              <c:choose>
+                <c:when test="${fn:length(noticeList) > 0}">
+                  <c:forEach var="noticeList" items="${noticeList}">
+                  <c:url var="readUrl" value="/notice/admin_read_notice.do">
+                        <c:param name="idx" value="${noticeList.idx}" />
+                                                          
+                  </c:url> 
+                      <!-- 밑 코드 주석해제하면 작동(css포함) -->
+                      <!-- <tr style="height: 50px;cursor: pointer; border-bottom: 1px solid #DBDBDB;" onclick="location.href='${readUrl}'"> -->
+                        
+                        <!-- detail(상세보기) 페이지 테스트 링크 -->
+                        <!-- TEST 라인 지우시고 밑에 주석 해제하면 동일합니다. -->
+                        <td style="vertical-align: middle;" class="text-center"><a href="/freeboard-read.html">TEST</a></td>
+
+                        <!-- <td style="vertical-align: middle;" class="text-center">${noticeList.idx}</td> -->
+                        <td style="vertical-align: middle;"> ${noticeList.noti_sub}sss</td>
+                        <td style="vertical-align: middle;" class="text-center">${noticeList.editdate}</td>
+                        <td style="vertical-align: middle;" class="text-center">${noticeList.noti_hit}</td>
+                        
+                      </tr>
+                    
+                  </c:forEach>
+                </c:when>
+                <c:otherwise>
+                  <!-- 교육관련 리스트인 것 같아서 주석처리 해놨습니다. -->
+                  <!-- <tr>
+                    <td colspan="4" class="text-center" style="line-height: 100px">조회된 교육 리스트가 없습니다.</td>
+                  </tr> -->
+                  
+                </c:otherwise>
+              </c:choose>
+              </tbody>
+            </table>
+            <div>
+                <!-- 페이지 번호 시작 -->
+                <div class="content-list-bottom">
+                    <nav>
+                        <ul class="pagination">
+                            <!-- 이전 그룹으로 이동 -->
+                            <c:choose>
+                                <c:when test="${pageHelper.prevPage > 0}">
+                                    <!-- 이전 그룹에 대한 페이지 번호가 존재한다면? -->
+                                    <!-- 이전 그룹으로 이동하기 위한 URL을 생성해서 "prevUrl"에 저장 -->
+                                    <c:url var="prevUrl" value="/notice/admin_notice_list.do">
+                                        
+                                        <c:param name="page" value="${pageHelper.prevPage}"></c:param>
+                                    </c:url>
+            
+                                    <li><a href="${prevUrl}">&laquo;</a></li>
+                                </c:when>
+            
+                                <c:otherwise>
+                                    <!-- 이전 그룹에 대한 페이지 번호가 존재하지 않는다면? -->
+                                    <li class="disabled"><a href="#" style="border: none;  color: #4B9A6A;">&laquo;</a></li>
+                                </c:otherwise>
+                            </c:choose>
+            
+                            <!-- 페이지 번호 -->
+                            <!-- 현재 그룹의 시작페이지~끝페이지 사이를 1씩 증가하면서 반복 -->
+                            <c:forEach var="i" begin="${pageHelper.startPage}"
+                                end="${pageHelper.endPage}" step="1">
+                                <!-- 각 페이지 번호로 이동할 수 있는 URL을 생성하여 page_url에 저장 -->
+                                <c:url var="pageUrl" value="/notice/admin_notice_list.do">
+                                    
+                                    <c:param name="page" value="${i}"></c:param>
+                                </c:url>
+            
+                                <!-- 반복중의 페이지 번호와 현재 위치한 페이지 번호가 같은 경우에 대한 분기 -->
+                                <c:choose>
+                                    <c:when test="${pageHelper.page == i}">
+                                        <li class="active"><a href="#"  style="border: none;  color: #4B9A6A;">${i}</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li><a href="${pageUrl}" >${i}</a></li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+            
+                            <!-- 다음 그룹으로 이동 -->
+                            <c:choose>
+                                <c:when test="${pageHelper.nextPage > 0}">
+                                    <!-- 다음 그룹에 대한 페이지 번호가 존재한다면? -->
+                                    <!-- 다음 그룹으로 이동하기 위한 URL을 생성해서 "nextUrl"에 저장 -->
+                                    <c:url var="nextUrl" value="/notice/admin_notice_list.do">
+                                        
+                                        <c:param name="page" value="${pageHelper.nextPage}"></c:param>
+                                    </c:url>
+            
+                                    <li><a href="${nextUrl}">&raquo;</a></li>
+                                </c:when>
+            
+                                <c:otherwise>
+                                    <!-- 이전 그룹에 대한 페이지 번호가 존재하지 않는다면? -->
+                                    <li class="disabled"><a href="#"  style="border: none;  color: #4B9A6A;">&raquo;</a></li>
+                                </c:otherwise>
+                            </c:choose>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- // 페이지 번호 끝 -->
+                 <a href="freeboard-insert.html"  style="padding-top: 10px; width: 150px;margin-top: -20px;height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 17px;">글작성</a>
+              <!-- <a href="${pageContext.request.contextPath}/notice/admin_notice_insert.do"  style="padding-top: 7px; width: 150px;margin-top: -20px;height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 17px;">글작성</a> -->
+            </div>    
+
+            </section>
+            <div class="cleafix"></div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>
