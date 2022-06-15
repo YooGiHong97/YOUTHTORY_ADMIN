@@ -66,3 +66,4 @@ generateHitCount()
       expiryDate.toGMTString() +
       "path=/";
   }
+  
