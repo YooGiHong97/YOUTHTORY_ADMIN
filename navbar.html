@@ -34,18 +34,19 @@
     <nav class="navbar" > 
         <div class="navbar__logo">
             <!-- a태그 삭제 후 밑에 주석을 해제하면 됩니다. -->
-            <a href="/navbar.html"><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <a href="navbar.html"><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
             <span class="total-user"> 총 방문자수 : </span>
         </div>
         <ul class="navbar__menu">
-            <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
+            <li style="font-size: 19px;"><a href="announce-list.html" class="nav-main-con">공지/교육</a>
+            <!-- <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a> -->
                 <ul class="navbar_submenu">
                     <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="#">교육</a></li>
                 </ul>
             </li>
-            <li style="font-size: 19px;"><a href="./freeboard-list.html" class="nav-main-con">자율게시판</a></li>
+            <li style="font-size: 19px;"><a href="freeboard-list.html" class="nav-main-con">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do" class="nav-main-con">참여</a>
                 <ul class="navbar_submenu">
                     <li><a href="excavation-list.html">의제발굴</a></li>
@@ -83,7 +84,7 @@
     </nav>
     <div style="border: 1px solid #C6C6C6; margin-top:-20px;"></div>
 
-    <div style="text-align:center; margin-top:18%;"> NAVBAR.HTML</div>
+    <!-- <div style="text-align:center; margin-top:18%;"> NAVBAR.HTML</div> -->
 
     <script src="./js/user-count.js"></script>
 </body>

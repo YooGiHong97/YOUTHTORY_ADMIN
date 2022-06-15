@@ -3,21 +3,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page trimDirectiveWhitespaces="true"%> -->
 <!DOCTYPE html>
-<html>
-<head>
-<!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다. 
-			- ANSI(euc-kr), UTF-8 -->
-		<meta charset="utf-8"/>
-		<!-- IE의 호환성 보기 모드 금지 -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<!-- 스마트 장치에서의 해상도 균일화 처리 -->
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">  -->
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
-		maximum-scale=1.0,user-scalable=no">
-		
-		<title>EXCAVATION LIST</title>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    <!---------------------------------------------------------------------------------------------------------------------------->
+            <title>FREEBOARD LIST</title>
+
+            <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- css 위치  -->
             <!---------------------------------------------------------------------------------------------------------------------------->
             <link rel="stylesheet" href="./css/navbar.css">
@@ -29,14 +23,18 @@
             <link href="${pageContext.request.contextPath}/asset/css/bootstrap.min.css" rel="stylesheet"/>
             <!---------------------------------------------------------------------------------------------------------------------------->
 
-</head>
+        </head>
+
 <body>
+
+<!-- <%@ include file="/WEB-INF/views/inc/navbar.jsp" %> -->
+
     <!---------------------------------------------------------------------------------------------------------------------------->
     <!-- NAVBAR 아코디언 메뉴 -->
     <!---------------------------------------------------------------------------------------------------------------------------->
     <nav class="navbar" > 
         <div class="navbar__logo">
-            <a href="/navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <a href="navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
             <span class="total-user"> 총 방문자수 : </span>
         </div>
@@ -44,12 +42,12 @@
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="">공지사항</a</li>
+                    <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
 
-            <li style="font-size: 19px;"><a href="./freeboard-list.html">자율게시판</a></li>
+            <li style="font-size: 19px;"><a href="freeboard-list.html">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do">참여</a>
                 <ul class="navbar_submenu">
                     <li><a href="excavation-list.html">의제발굴</a></li>
@@ -86,7 +84,8 @@
         </a>
     </nav>
     <div style="border: 1px solid #C6C6C6; margin-top:-20px;"></div>
-<!-- <%@ include file="/WEB-INF/views/inc/navbar.jsp" %> -->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+
 
     <!---------------------------------------------------------------------------------------------------------------------------->
     <!-- 자율게시판 메인 컨테이너  -->
@@ -156,14 +155,16 @@
       </div>
       
       <div style="border-bottom: 1px solid #4B9A6A; font-size: 15px; font-weight: bold;height: 40px; margin-top: 70px; width: 94%">
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px; background-color: #4B9A6A; color: #FFFFFF;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do">진행중인 제안</a>
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="/excavation-end-list.html">종료된 제안</a>
-        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_end_list.do">종료된 제안</a> -->
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="/excavation-list-realized.html">실현된 제안</a>
-        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_realized_list.do">실현된 제안</a> -->
-        <%-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do">검토중 제안</a> --%>
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="/excavation-blind-list.html">숨김처리 제안</a>
-        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_blind_list.do">숨김처리 제안</a> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px; background-color: #4B9A6A; color: #FFFFFF;" href="excavation-list.html">진행중인 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px; background-color: #4B9A6A; color: #FFFFFF;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do">진행중인 발굴</a> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-end-list.html">종료된 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_end_list.do">종료된 발굴</a> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-list-realized.html">실현된 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_realized_list.do">실현된 발굴</a> -->
+        <%-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-list.html">검토중 발굴</a> --%>
+        <!-- <%-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do">검토중 발굴</a> --%> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-blind-list.html">숨김처리 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_blind_list.do">숨김처리 발굴</a> -->
         <br>
       
       </div>
@@ -176,9 +177,9 @@
         <span class="input-group-btn">
           <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </span>
-      
       </div>
     </form>
+    <a href="excavation-insert.html"  style="padding-top: 10px; width: 150px;margin-top: 20px; height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 12px;"><p style="margin-top:4px;">의제발굴 글쓰기</p></a>
   
   </div>
   
@@ -200,11 +201,11 @@
           		<li style="float: left; margin-top: 13px;">
           		
 												
-          			<c:if test="${propoList.pro_cate eq '교육'}"><img style="width: 30px;" alt="교육" src="./images/icon-edu.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '문화'}"><img style="width: 30px;" alt="문화" src="./images/icon-culture.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '환경'}"><img style="width: 30px;" alt="환경" src="./images/icon-environment.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '안전'}"><img style="width: 30px;" alt="안전" src="./images/icon-safety.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '기타'}"><img style="width: 30px;" alt="기타" src="./images/icon-etc.png"></c:if> 
+          			<c:if test="${propoList.pro_cate eq '교육'}"><img style="width: 30px;" alt="교육" src="./images/icon_edu.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '문화'}"><img style="width: 30px;" alt="문화" src="./images/icon_culture.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '환경'}"><img style="width: 30px;" alt="환경" src="./images/icon_environment.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '안전'}"><img style="width: 30px;" alt="안전" src="./images/icon_safety.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '기타'}"><img style="width: 30px;" alt="기타" src="./images/icon_etc.png"></c:if> 
           			
           		</li>
           		<li style="padding-top: 26px; margin-left: 13%;">${propoList.pro_sub}</li>
@@ -216,6 +217,7 @@
           </a>
            </c:forEach>
         </c:when>
+        <a href="/excavation-read.html">excavation(의제발굴) READ 테스트 페이지</a>
         <c:otherwise>
           <ul class="proposal_none">
             <li  class="text-center" style="line-height: 100px">조회된 제안 리스트가 없습니다.</li>

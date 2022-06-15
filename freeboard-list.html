@@ -34,7 +34,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------->
     <nav class="navbar" > 
         <div class="navbar__logo">
-            <a href="/navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <a href="navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
             <span class="total-user"> 총 방문자수 : </span>
         </div>
@@ -42,12 +42,12 @@
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="">공지사항</a</li>
+                    <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
 
-            <li style="font-size: 19px;"><a href="./freeboard-list.html">자율게시판</a></li>
+            <li style="font-size: 19px;"><a href="freeboard-list.html">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do">참여</a>
                 <ul class="navbar_submenu">
                     <li><a href="excavation-list.html">의제발굴</a></li>
@@ -95,7 +95,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>자율게시판</b></div>
+                <div class="col-12 main-sec-1"><b>자율게시판 목록</b></div>
             </div>
         </div>
     </section>
@@ -124,7 +124,7 @@
                         
                         <!-- detail(상세보기) 페이지 테스트 링크 -->
                         <!-- TEST 라인 지우시고 밑에 주석 해제하면 동일합니다. -->
-                        <td style="vertical-align: middle;" class="text-center"><a href="/freeboard-read.html">TEST</a></td>
+                        <td style="vertical-align: middle;" class="text-center"><a href="/freeboard-read.html">상세보기</a></td>
 
                         <!-- <td style="vertical-align: middle;" class="text-center">${noticeList.idx}</td> -->
                         <td style="vertical-align: middle;"> ${noticeList.noti_sub}sss</td>
@@ -212,7 +212,7 @@
                     </nav>
                 </div>
                 <!-- // 페이지 번호 끝 -->
-                 <a href="freeboard-insert.html"  style="padding-top: 10px; width: 150px;margin-top: -20px;height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 17px;">글작성</a>
+                 <a href="freeboard-insert.html"  style="padding-top: 10px; width: 170px;margin-top: -20px;height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 17px;">자율게시판 글쓰기</a>
               <!-- <a href="${pageContext.request.contextPath}/notice/admin_notice_insert.do"  style="padding-top: 7px; width: 150px;margin-top: -20px;height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 17px;">글작성</a> -->
             </div>    
 

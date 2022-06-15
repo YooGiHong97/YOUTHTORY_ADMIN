@@ -23,17 +23,7 @@
     }
 }
 /*********************************************************/
-@media screen and (max-width:768px){
-
-.list-main-cont{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    }
-}
-
-    .proposal{
+.proposal{
     list-style: none; margin-bottom: 6%;  border: 1px solid #C6C6C6; width: 800px; height: 170px; border-radius: 10px;
     }
     .proposal:hover {
@@ -47,7 +37,7 @@
           text-decoration: none;
           font-size:2rem;
           color:white;
-          margin:20px 20px 0 0;
+          margin:20px 15px 0 0;
           display:inline-block;
           
           transition:all 0.1s;
@@ -72,21 +62,11 @@
         .btn.black{
           background-color: #666666;
           border-bottom:5px solid #666666;
-          margin-left: 74%;
         }
         .btn.black:active{
           border-bottom:5px solid #666666;
         }
-        .list-cont{
-          display:flex;
-          justify-content: flex-start;
-        }
-        .right-cont{
-          display:flex;
-          justify-content: flex-end;
-          margin-left:17px;
-        }
-        @media screen and (min-width:768px){
+
         .list-cont{
           display:flex;
           justify-content: flex-start;
@@ -95,7 +75,5 @@
         .right-cont{
           display:flex;
           justify-content: flex-end;
-          margin-top:-60px;
+          margin-top:-4.3%;
         }
-      }
-

@@ -20,7 +20,7 @@
             <!-- css 위치  -->
             <!---------------------------------------------------------------------------------------------------------------------------->
             <link rel="stylesheet" href="./css/navbar.css">
-            <link rel="stylesheet" href="./css/freeboard-insert.css">
+            <link rel="stylesheet" href="./css/announce-insert.css">
             <link rel="stylesheet" href="./css/bootstrap.min.css">
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- bootstrap -->
@@ -38,7 +38,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------->
     <nav class="navbar" > 
         <div class="navbar__logo">
-            <a href="navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <a href="/navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
             <span class="total-user"> 총 방문자수 : </span>
         </div>
@@ -49,7 +49,7 @@
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
-            <li style="font-size: 19px;"><a href="./freeboard-list.html" class="nav-main-con">자율게시판</a></li>
+            <li style="font-size: 19px;"><a href="freeboard-list.html" class="nav-main-con">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do" class="nav-main-con">참여</a>
                 <ul class="navbar_submenu">
                     <li><a href="excavation-list.html">의제발굴</a></li>
@@ -92,7 +92,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>자율게시판 등록</b></div>
+                <div class="col-12 main-sec-1"><b>공지사항 등록</b></div>
             </div>
         </div>
     </section>
@@ -106,10 +106,19 @@
         <form class="form-horizontal notice_insert" id="notice_insert" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/notice/admin_notice_insert_ok.do">
 		    		    
 		    
-		    
+		    <!-- 시작일 ~ 마감일 --><br><br>
+			<div class="form-input-box" >
+				<span class="icon-green-bar"></span>시작일 :&nbsp;<input type="date" id="noti_sub" name="noti_sub"><span class="icon-green-bar">&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;</span>마감일 :&nbsp;<input type="date" id="noti_sub" name="noti_sub">
+			</div>
+
+            <!-- 상단노출 --><br>
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>상단노출 여부&nbsp;<input type="checkbox" style="width:50px; height:20px; margin-bottom:2%;" id="noti_sub" name="noti_sub"></h3>
+			</div>
+
 			<!-- 제목 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>자율게시판 글 제목</h3>
+				<h3 ><span class="icon-green-bar"></span>공지사항 제목</h3>
 				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="noti_sub" name="noti_sub" placeholder="제목을 입력해주세요.">
 			</div>
 
@@ -121,7 +130,7 @@
 			
 			<!-- 내용 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>자율게시판 글 내용</h3>
+				<h3 ><span class="icon-green-bar"></span>공지사항 내용</h3>
 				<textarea style="width: 97%; height:400px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard"  placeholder="내용을 입력 해 주세요."></textarea>
 			</div>
 			

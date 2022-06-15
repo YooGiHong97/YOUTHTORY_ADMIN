@@ -20,7 +20,7 @@
             <!-- css 위치  -->
             <!---------------------------------------------------------------------------------------------------------------------------->
             <link rel="stylesheet" href="./css/navbar.css">
-            <link rel="stylesheet" href="./css/freeboard-insert.css">
+            <link rel="stylesheet" href="./css/user-info-insert.css">
             <link rel="stylesheet" href="./css/bootstrap.min.css">
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- bootstrap -->
@@ -38,14 +38,14 @@
     <!---------------------------------------------------------------------------------------------------------------------------->
     <nav class="navbar" > 
         <div class="navbar__logo">
-            <a href="navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <a href="/navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
             <span class="total-user"> 총 방문자수 : </span>
         </div>
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="announce-list.html">공지사항</a</li>
+                    <li><a href="">공지사항</a</li>
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
@@ -92,7 +92,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>자율게시판 등록</b></div>
+                <div class="col-12 main-sec-1"><b>회원정보</b></div>
             </div>
         </div>
     </section>
@@ -107,22 +107,34 @@
 		    		    
 		    
 		    
-			<!-- 제목 -->
+			<!-- ID -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>자율게시판 글 제목</h3>
-				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="noti_sub" name="noti_sub" placeholder="제목을 입력해주세요.">
+				<h3 ><span class="icon-green-bar"></span>아이디</h3>
+				<input style="width: 15%;  margin-top: 2%; margin-left: 3%;" type="text" id="noti_sub" name="noti_sub" placeholder="ID를 입력해주세요.">
 			</div>
 
-			<!-- 영상 url -->
+			<!-- 이름 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>영상 URL</h3>
+				<h3 ><span class="icon-green-bar"></span>이름</h3>
 				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="you_url" name="you_url" placeholder="url이 있다면 입력해 주세요.">
 			</div>
 			
-			<!-- 내용 -->
+			<!-- 성별 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>자율게시판 글 내용</h3>
-				<textarea style="width: 97%; height:400px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard"  placeholder="내용을 입력 해 주세요."></textarea>
+				<h3 ><span class="icon-green-bar"></span>성별</h3>
+				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="you_url" name="you_url" placeholder="url이 있다면 입력해 주세요.">
+			</div>
+
+            <!-- 생년월일 -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>생년월일</h3>
+                <input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="you_url" name="you_url" placeholder="url이 있다면 입력해 주세요.">
+			</div>
+
+            <!-- 휴대폰번호 -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>휴대폰번호</h3>
+				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="you_url" name="you_url" placeholder="url이 있다면 입력해 주세요.">
 			</div>
 			
 			<script type="text/javascript">

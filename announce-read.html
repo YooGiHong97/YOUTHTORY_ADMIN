@@ -19,7 +19,7 @@
             <!-- css 위치  -->
             <!---------------------------------------------------------------------------------------------------------------------------->
             <link rel="stylesheet" href="./css/navbar.css">
-            <link rel="stylesheet" href="./css/freeboard-read.css">
+            <link rel="stylesheet" href="./css/announce-read.css">
             <link rel="stylesheet" href="./css/bootstrap.min.css">
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- bootstrap -->
@@ -43,7 +43,7 @@
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="">공지사항</a</li>
+                    <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
@@ -95,7 +95,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>자율게시판 상세보기</b></div>
+                <div class="col-12 main-sec-1"><b>공지사항 상세보기</b></div>
             </div>
         </div>
     </section>
@@ -113,10 +113,10 @@
       	<p style=" font-size: 20px; margin-top: 15px; font-weight: bold;">${getNotice.noti_sub}</p>
       	<p style="float: left;margin-top: 30px;"><strong>• 등록일</strong>&nbsp;&nbsp;${getNotice.regdate}</p>
       	
-      	<p style="margin-top: 41px;margin-left: 28%;"><strong>• 조회</strong>&nbsp;&nbsp;${getNotice.noti_hit}</p>
+      	<p style="margin-top: 41px;margin-left: 25%;"><strong>• 조회수</strong>&nbsp;&nbsp;${getNotice.noti_hit}</p>
 
         <!-- 추가사항 -->
-        <p style="margin-top: 41px;"><strong>• 작성자</strong>&nbsp;&nbsp;${getNotice.noti_hit}</p>
+        <p style="margin-top: 41px;"><strong>• 시작일 :</strong>&nbsp;&nbsp;${getNotice.noti_hit} ~ <strong> 마감일 :</strong>&nbsp;&nbsp;${getNotice.noti_hit}</p>
    </div>      	
       	
     <div style="border-bottom: 1px solid #CCCCCC; width: 94%; margin-top: 60px;">  	
@@ -143,16 +143,15 @@
      </div>
      <div class="list-cont" style="width: 94%;">
         <!-- 라인 삭제하고 밑에 주석 해제하면 작동됩니다. (a태그 수정/목록으로 동일, 삭제 변경X) -->
-        <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="/freeboard-update.html">수정</a>
+        <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="/announce-update.html">수정</a>
         <!-- <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="${pageContext.request.contextPath}/notice/admin_edit_notice.do?idx=${getNotice.idx}">수정</a> -->
         <c:if test="${readPropo.pro_show eq 0}"><a style="border-radius: 0px;" class="btn green" href="${pageContext.request.contextPath}/proposal/admin_blind_proposal.do?idx=${readPropo.idx}" onclick="return confirm('이 제안글을 숨김처리 하시겠습니까?');">숨김</a></c:if>
         <c:if test="${readPropo.pro_show eq 1}"><a style="border-radius: 0px;" class="btn red" href="${pageContext.request.contextPath}/proposal/admin_show_proposal.do?idx=${readPropo.idx}" onclick="return confirm('숨김처리를 해제 하시겠습니까?');">숨김해제</a></c:if>
         <a style="border-radius: 0px;" class="btn red" href="${pageContext.request.contextPath}/notice/admin_notice_delete_ok.do?idx=${getNotice.idx}" onclick="return confirm('이 교육글을 삭제 하시겠습니까?');">삭제</a>
 	</div>
-    <div class="right-cont" style="width: 94.3%;">
-        <a style="border-radius: 0px;" class="btn black" href="/freeboard-list.html">목록으로</a>
+    <div class="right-cont" style="width: 95%;">
+        <a style="border-radius: 0px;" class="btn black" href="/announce-list.html">목록으로</a>
         <!-- <a style="border-radius: 0px;" class="btn black" href="${pageContext.request.contextPath}/notice/admin_notice_list.do">목록으로</a> -->
-    </div>
     </div>
 	<br><br><br><br><br><br>
 	<!-- <div style="border-bottom: 1px solid #4B9A6A; font-size: 15px; font-weight: bold;width: 94%"></div> -->

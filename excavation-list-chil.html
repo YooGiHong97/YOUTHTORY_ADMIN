@@ -37,7 +37,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------->
     <nav class="navbar" > 
         <div class="navbar__logo">
-            <a href="/navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
+            <a href="navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
             <span class="total-user"> 총 방문자수 : </span>
         </div>
@@ -45,12 +45,12 @@
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="">공지사항</a</li>
+                    <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
 
-            <li style="font-size: 19px;"><a href="./freeboard-list.html">자율게시판</a></li>
+            <li style="font-size: 19px;"><a href="freeboard-list.html">자율게시판</a></li>
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/notice/admin_notice_list.do">참여</a>
                 <ul class="navbar_submenu">
                     <li><a href="excavation-list.html">의제발굴</a></li>
@@ -157,11 +157,16 @@
       </div>
       
       <div style="border-bottom: 1px solid #4B9A6A; font-size: 15px; font-weight: bold;height: 40px; margin-top: 70px; width: 94%">
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px; background-color: #4B9A6A; color: #FFFFFF;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list_chil.do">진행중인 제안</a>
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_end_list_chil.do">종료된 제안</a>
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_realized_list_chil.do">실현된 제안</a>
-        <%-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do">검토중 제안</a> --%>
-        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_blind_list_chil.do">숨김처리 제안</a>
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px; background-color: #4B9A6A; color: #FFFFFF;" href="excavation-list-chil.html">진행중인 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px; background-color: #4B9A6A; color: #FFFFFF;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list_chil.do">진행중인 발굴</a> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-end-list-chil.html">종료된 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_end_list_chil.do">종료된 발굴</a> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-list-realized-chil.html">실현된 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_realized_list_chil.do">실현된 발굴</a> -->
+        <%-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-list-chil.html">검토중 발굴</a> --%>
+        <!-- <%-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do">검토중 발굴</a> --%> -->
+        <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="excavation-blind-list-chil.html">숨김처리 발굴</a>
+        <!-- <a style="border: 2px solid #4B9A6A;margin-right: -8px;padding: 19px;" href="${pageContext.request.contextPath}/proposal/admin_proposal_blind_list_chil.do">숨김처리 발굴</a> -->
         <br>
       
       </div>
@@ -174,9 +179,9 @@
         <span class="input-group-btn">
           <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </span>
-      
       </div>
     </form>
+    <a href="excavation-insert-chil.html"  style="padding-top: 10px; width: 160px;margin-top: 20px; height: 40px; border: 0;outline: 0; float: right; background-color: #4B9A6A; color: white; text-align: center; vertical-align: middle; font-size: 12px;"><p style="margin-top:4px;">의제발굴(어린이) 글쓰기</p></a>
   
   </div>
   
@@ -198,22 +203,23 @@
           		<li style="float: left; margin-top: 13px;">
           		
 												
-          			<c:if test="${propoList.pro_cate eq '교육'}"><img style="width: 30px;" alt="교육" src="../img/icon_edu.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '문화'}"><img style="width: 30px;" alt="문화" src="../img/icon_culture.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '환경'}"><img style="width: 30px;" alt="환경" src="../img/icon_environment.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '안전'}"><img style="width: 30px;" alt="안전" src="../img/icon_safety.png"></c:if>
-          			<c:if test="${propoList.pro_cate eq '기타'}"><img style="width: 30px;" alt="기타" src="../img/icon_etc.png"></c:if> 
+          			<c:if test="${propoList.pro_cate eq '교육'}"><img style="width: 30px;" alt="교육" src="./images/icon_edu.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '문화'}"><img style="width: 30px;" alt="문화" src="./images/icon_culture.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '환경'}"><img style="width: 30px;" alt="환경" src="./images/icon_environment.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '안전'}"><img style="width: 30px;" alt="안전" src="./images/icon_safety.png"></c:if>
+          			<c:if test="${propoList.pro_cate eq '기타'}"><img style="width: 30px;" alt="기타" src="./images/icon_etc.png"></c:if> 
           			
           		</li>
           		<li style="padding-top: 26px; margin-left: 13%;">${propoList.pro_sub}</li>
           		<li style="width: 730px; margin-top: 20px; margin-bottom: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${propoList.pro_content2}</li>
-          		<li style=" float: right; margin-right: 15%; margin-left: -20%;"><img style="width: 20px;" alt="조회수" src="../img/icon_see.png">  ${propoList.pro_hit}</li>
-          		<li style=" float: right; margin-right: 25%;"><img style="width: 20px;" alt="좋아요" src="../img/icon_like.png">  ${propoList.pro_agree}</li>
+          		<li style=" float: right; margin-right: 15%; margin-left: -20%;"><img style="width: 20px;" alt="조회수" src="./images/icon_see.png">  ${propoList.pro_hit}</li>
+          		<li style=" float: right; margin-right: 25%;"><img style="width: 20px;" alt="좋아요" src="./images/icon_like.png">  ${propoList.pro_agree}</li>
           		
           </ul>
           </a>
            </c:forEach>
         </c:when>
+        <a href="/excavation-read-chil.html">excavation chil(의제발굴(어린이)) READ 테스트 페이지</a>
         <c:otherwise>
           <ul class="proposal_none">
             <li  class="text-center" style="line-height: 100px">조회된 제안 리스트가 없습니다.</li>

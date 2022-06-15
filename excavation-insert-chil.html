@@ -14,13 +14,13 @@
             <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">  -->
             <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
             
-            <title>FREEBOARD INSERT</title>
+            <title>EXCAVATION INSERT CHIL</title>
 
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- css 위치  -->
             <!---------------------------------------------------------------------------------------------------------------------------->
             <link rel="stylesheet" href="./css/navbar.css">
-            <link rel="stylesheet" href="./css/freeboard-insert.css">
+            <link rel="stylesheet" href="./css/excavation-insert-chil.css">
             <link rel="stylesheet" href="./css/bootstrap.min.css">
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- bootstrap -->
@@ -92,7 +92,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>자율게시판 등록</b></div>
+                <div class="col-12 main-sec-1"><b>의제발굴(어린이) 등록</b></div>
             </div>
         </div>
     </section>
@@ -103,26 +103,43 @@
       </div>
         
         <div style="margin-top: 5%; margin-left: 17%; margin-right: 13%; width: 60%; border-top: 2px solid #62986E;">
-        <form class="form-horizontal notice_insert" id="notice_insert" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/notice/admin_notice_insert_ok.do">
+      <form class="form-horizontal notice_insert" id="notice_insert" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/notice/admin_notice_insert_ok.do">
 		    		    
-		    
-		    
+		  <!-- 시작일 ~ 마감일 --><br><br>
+			<div class="form-input-box" >
+        <h4>
+				  <span class="icon-green-bar"></span>시작일 :&nbsp;<input type="date" id="noti_sub" name="noti_sub"><span class="icon-green-bar">&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;</span>마감일 :&nbsp;<input type="date" id="noti_sub" name="noti_sub">
+			  </h4>
+      </div><br>
+
+      <!-- 등록자 -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>의제발굴 등록자</h3>
+				<input style="width: 20%;  margin-top: 2%; margin-left: 3%;" type="text" id="noti_sub" name="noti_sub" placeholder="이름을 입력해주세요.">
+			</div>
+
 			<!-- 제목 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>자율게시판 글 제목</h3>
+				<h3 ><span class="icon-green-bar"></span>의제발굴 글 제목</h3>
 				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="noti_sub" name="noti_sub" placeholder="제목을 입력해주세요.">
 			</div>
 
-			<!-- 영상 url -->
+			<!-- 배경 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>영상 URL</h3>
-				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="you_url" name="you_url" placeholder="url이 있다면 입력해 주세요.">
+				<h3 ><span class="icon-green-bar"></span>의제발굴 배경</h3>
+        <textarea style="width: 97%; height:180px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard"  placeholder="배경을 입력 해 주세요."></textarea>
 			</div>
 			
 			<!-- 내용 -->
 			<div class="form-input-box" >
-				<h3 ><span class="icon-green-bar"></span>자율게시판 글 내용</h3>
-				<textarea style="width: 97%; height:400px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard"  placeholder="내용을 입력 해 주세요."></textarea>
+				<h3 ><span class="icon-green-bar"></span>의제발굴 글 내용</h3>
+				<textarea style="width: 97%; height:180px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard"  placeholder="내용을 입력 해 주세요."></textarea>
+			</div>
+
+      <!-- 효과 -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>의제발굴 효과</h3>
+				<textarea style="width: 97%; height:180px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard"  placeholder="효과를 입력 해 주세요."></textarea>
 			</div>
 			
 			<script type="text/javascript">

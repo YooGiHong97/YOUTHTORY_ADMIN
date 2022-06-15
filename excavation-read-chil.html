@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
 		maximum-scale=1.0,user-scalable=no">
 		
-		<title>EXCAVATION READ</title>
+		<title>EXCAVATION READ CHIL</title>
 
 		    <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- css 위치  -->
@@ -92,7 +92,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>의제발굴 목록</b></div>
+                <div class="col-12 main-sec-1"><b>의제발굴(어린이) 목록</b></div>
             </div>
         </div>
     </section>
@@ -126,36 +126,33 @@
    </div>      	
       	
     <div style="border-bottom: 1px solid #CCCCCC; width: 94%">  	
-      	<h3 style="border-bottom: 1px solid #000000;width: 5.5%; padding-top: 5%; z-index: 500; font-weight: bold;">배경</h3>
-      	<p style="white-space: pre-line;">${readPropo.pro_content1}</p>
+      	<%-- <h3 style="border-bottom: 1px solid #000000;width: 5.5%; padding-top: 5%; z-index: 500; font-weight: bold;">배경</h3>
+      	<p style="white-space: pre-line;">${readPropo.pro_content1}</p> --%>
       	<h3 style="border-bottom: 1px solid #000000;width: 11%; padding-top: 5%; z-index: 500; font-weight: bold;">주요내용</h3>
-      	<p style="white-space: pre-line;">${readPropo.pro_content2}</p>
-      	<h3 style="border-bottom: 1px solid #000000;width: 11%; padding-top: 5%; z-index: 500; font-weight: bold;">기대효과</h3>
-      	<p style="white-space: pre-line; margin-bottom: 80px;">${readPropo.pro_content3}</p>
+      	<p style="white-space: pre-line;margin-bottom: 5%;">${readPropo.pro_content2}</p>
+      	<%-- <h3 style="border-bottom: 1px solid #000000;width: 11%; padding-top: 5%; z-index: 500; font-weight: bold;">기대효과</h3>
+      	<p style="white-space: pre-line; margin-bottom: 80px;">${readPropo.pro_content3}</p> --%>
       	
       
         
          
-     </div>
-     
-     <div class="list-cont" style="width: 94%;">
-        <!-- 라인 삭제하고 밑에 주석 해제하면 작동됩니다. (a태그 수정/목록으로 동일, 삭제 변경X) -->
-        <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="/excavation-update.html">수정</a>
-        <!-- <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="${pageContext.request.contextPath}/notice/admin_edit_notice.do?idx=${getNotice.idx}">수정</a> -->
-        <c:if test="${readPropo.pro_show eq 0}"><a style="border-radius: 0px;" class="btn green" href="${pageContext.request.contextPath}/proposal/admin_blind_proposal.do?idx=${readPropo.idx}" onclick="return confirm('이 제안글을 숨김처리 하시겠습니까?');">숨김</a></c:if>
-        <c:if test="${readPropo.pro_show eq 1}"><a style="border-radius: 0px;" class="btn red" href="${pageContext.request.contextPath}/proposal/admin_show_proposal.do?idx=${readPropo.idx}" onclick="return confirm('숨김처리를 해제 하시겠습니까?');">숨김해제</a></c:if>
-        <a style="border-radius: 0px;" class="btn red" href="${pageContext.request.contextPath}/notice/admin_notice_delete_ok.do?idx=${getNotice.idx}" onclick="return confirm('이 교육글을 삭제 하시겠습니까?');">삭제</a>
-	</div>
-    <div class="right-cont" style="width: 94.3%;">
-        <a style="border-radius: 0px;" class="btn black" href="/excavation-list.html">목록으로</a>
-        <!-- <a style="border-radius: 0px;" class="btn black" href="${pageContext.request.contextPath}/notice/admin_notice_list.do">목록으로</a> -->
+    </div>
+    <div class="list-cont" style="width: 94%;">
+    <a class="btn green" href="/excavation-update-chil.html">수정</a>
+    <c:if test="${readPropo.pro_show eq 0}"><a class="btn green" href="${pageContext.request.contextPath}/proposal/admin_blind_proposal_chil.do?idx=${readPropo.idx}" onclick="return confirm('이 제안글을 숨김처리 하시겠습니까?');">숨김</a></c:if>
+    <c:if test="${readPropo.pro_show eq 1}"><a class="btn red" href="${pageContext.request.contextPath}/proposal/admin_show_proposal_chil.do?idx=${readPropo.idx}" onclick="return confirm('숨김처리를 해제 하시겠습니까?');">숨김해제</a></c:if>
+    <a class="btn red" href="${pageContext.request.contextPath}/notice/admin_notice_delete_ok.do?idx=${getNotice.idx}" onclick="return confirm('이 교육글을 삭제 하시겠습니까?');">삭제</a>
+    </div>
+        <div class="right-cont" style="width: 94.3%;">
+        <a style="border-radius: 0px;" class="btn black" href="/excavation-list-chil.html">목록으로</a>
+        <!--      <a class="btn black" href="${pageContext.request.contextPath}/proposal/admin_proposal_list_chil.do">목록으로</a> -->
     </div>
 	<p></p>
 	
 	<div style="border-bottom: 1px solid #4B9A6A; font-size: 15px; font-weight: bold;height: 40px; margin-top: 20px; width: 94%"></div>
 	
 	<div>
-		<img style="width: 50px;float: left;margin-top: 14px;" alt="제안답변" src="./images/balloon.png">
+		<img style="width: 40px;float: left;margin-top: 14px;" alt="제안답변" src="./images/balloon.png">
 		<p style="margin-left: 8.5%;padding-top: 20px;font-weight: bold;font-size: 18px;">제안 답변</p>
 	</div>
 	<div style="border-bottom: 1px solid #CCCCCC; font-size: 15px; font-weight: bold; margin-top: 20px; width: 94%"></div>
@@ -163,7 +160,7 @@
 	<div>
 	 <c:choose>
 	<c:when test="${null eq readAnswer}">
-	<form class="form-horizontal answer_insert" id="answer_insert" method="get"  action="${pageContext.request.contextPath}/proposal/admin_proposal_answer.do">
+	<form class="form-horizontal answer_insert" id="answer_insert" method="get"  action="${pageContext.request.contextPath}/proposal/admin_proposal_answer_chil.do">
 	    <input type="hidden" name="pro_idx" id="pro_idx" value="${readPropo.idx}">
 		<input style="margin-top: 2%;margin-bottom: 2%;"" type="radio" name="pro_state" id="pro_state" value="2">실현
 		<input style="    margin-left: 20px;" type="radio" name="pro_state" id="pro_state" value="1">종료
@@ -188,11 +185,11 @@
 		
 		<button style="margin-right: 5.8%; float: right;" type="submit">답변등록</button>
 	</form>
-	</c:when><br><br><br><br><br>
-	<!-- <c:otherwise>
-	<p style="white-space: pre-line;margin-top: 5%;">${readAnswer.ans_con}</p>
+	</c:when>
+	<c:otherwise>
+	<!-- <p style="white-space: pre-line;margin-top: 5%;">${readAnswer.ans_con}</p>
 	<p style="white-space: pre-line; float: right; margin-right: 5.8%;margin-top: 2%;">• 작성일 : ${readAnswer.editdate}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • 작성자 : 관리자</p>
-	<a style="margin-top: 8%;" class="btn green" href="${pageContext.request.contextPath}/proposal/admin_answer_edit.do?ans_idx=${readAnswer.idx}&pro_idx=${readPropo.idx}" >수정</a>
+	<a style="margin-top: 8%;" class="btn green" href="${pageContext.request.contextPath}/proposal/admin_answer_edit_chil.do?ans_idx=${readAnswer.idx}&pro_idx=${readPropo.idx}" >수정</a>
 	</c:otherwise>
 	</c:choose>
 	
@@ -216,14 +213,15 @@
           </ul>
           <div style="border-bottom: 1px solid #CCCCCC;"></div>
            </c:forEach>
-        </c:when>
+        </c:when> -->
         <c:otherwise>
           <ul class="proposal_none">
             <li  class="text-center" style="line-height: 100px">조회된 댓글 리스트가 없습니다.</li>
           </ul>
           
-        </c:otherwise> -->
+        </c:otherwise>
       </c:choose>
+     
 	<div>
       
       </div>
@@ -232,7 +230,7 @@
     <div class="cleafix"></div>
     
     
-        <!-- <%@ include file="/WEB-INF/views/inc/footer.jsp" %> -->
+        <%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 </body>
 </html>

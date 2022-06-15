@@ -14,12 +14,12 @@
             <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">  -->
             <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
             
-            <title>FREEBOARD READ</title>
+            <title>FREEBOARD UPDATE</title>
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- css 위치  -->
             <!---------------------------------------------------------------------------------------------------------------------------->
             <link rel="stylesheet" href="./css/navbar.css">
-            <link rel="stylesheet" href="./css/freeboard-read.css">
+            <link rel="stylesheet" href="./css/announce-update.css">
             <link rel="stylesheet" href="./css/bootstrap.min.css">
             <!---------------------------------------------------------------------------------------------------------------------------->
             <!-- bootstrap -->
@@ -29,8 +29,7 @@
 
         </head>
 <body>
-
-    <!---------------------------------------------------------------------------------------------------------------------------->
+     <!---------------------------------------------------------------------------------------------------------------------------->
     <!-- NAVBAR 아코디언 메뉴 -->
     <!---------------------------------------------------------------------------------------------------------------------------->
     <nav class="navbar"> 
@@ -43,7 +42,7 @@
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
                 <ul class="navbar_submenu">
-                    <li><a href="">공지사항</a</li>
+                    <li><a href="announce-list.html">공지사항</a</li>
                     <li><a href="">교육</a></li>
                 </ul>
             </li>
@@ -95,7 +94,7 @@
     <section>
         <div class="container-fluid main_container">
             <div class="main_content">
-                <div class="col-12 main-sec-1"><b>자율게시판 상세보기</b></div>
+                <div class="col-12 main-sec-1"><b>공지사항 수정</b></div>
             </div>
         </div>
     </section>
@@ -103,66 +102,103 @@
     <section>
     
     <div style="margin-left: 17%; margin-right: 13%;">
-      <div style="border-bottom: 1px solid #4B9A6A; font-size: 15px; font-weight: bold;height: 40px; margin-top: 20px; width: 94%">
-        
-      
+    
       </div>
-  <div style="border-bottom: 1px solid #CCCCCC; width: 94%">
-  		
-      	
-      	<p style=" font-size: 20px; margin-top: 15px; font-weight: bold;">${getNotice.noti_sub}</p>
-      	<p style="float: left;margin-top: 30px;"><strong>• 등록일</strong>&nbsp;&nbsp;${getNotice.regdate}</p>
-      	
-      	<p style="margin-top: 41px;margin-left: 28%;"><strong>• 조회</strong>&nbsp;&nbsp;${getNotice.noti_hit}</p>
+        
+        <div style="margin-top: 5%; margin-left: 17%; margin-right: 13%; width: 60%; border-top: 2px solid #62986E;">
+        <form class="form-horizontal notice_insert" id="notice_edit" method="post" enctype="multipart/form-data" action="https://www.youthapi.co.kr/notice/admin_edit_notice_ok.do">
+		    		    <input id="idx" name="idx" type="hidden" value="${getNotice.idx}" >
+		    
+		  <!-- 시작일 ~ 마감일 --><br><br>
+      <div class="form-input-box" >
+        <span class="icon-green-bar"></span>시작일 :&nbsp;<input type="date" id="noti_sub" name="noti_sub"><span class="icon-green-bar">&nbsp;&nbsp;&nbsp; ~ &nbsp;&nbsp;</span>마감일 :&nbsp;<input type="date" id="noti_sub" name="noti_sub">
+      </div>
+  
+      <!-- 상단노출 --><br>
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>상단노출 여부&nbsp;<input type="checkbox" style="width:50px; height:20px; margin-bottom:2%;" id="noti_sub" name="noti_sub" value="${getNotice.noti_sub}"></h3>
+			</div>
 
-        <!-- 추가사항 -->
-        <p style="margin-top: 41px;"><strong>• 작성자</strong>&nbsp;&nbsp;${getNotice.noti_hit}</p>
-   </div>      	
-      	
-    <div style="border-bottom: 1px solid #CCCCCC; width: 94%; margin-top: 60px;">  	
-      	<p style="white-space: pre-line; margin-bottom: 60px;">유튜브 링크 : ${getNotice.you_url}</p>
-      	<p style="white-space: pre-line; margin-bottom: 60px;">${getNotice.noti_con}</p>
-      	
-      	<!-- 첨부파일 목록 표시하기 -->
-			<c:if test="${imgList != null}">
-			<!-- 이미지만 별도로 화면에 출력하기 -->
-				<c:forEach var="img" items="${imgList}">
-					<c:if test="${fn:substringBefore(img.content_type, '/') == 'image'}">
-						<c:url var="downloadUrl" value="/download.do">
-							<c:param name="img" value="${img.file_dir}/${img.file_name}" />
-						</c:url>
-						<p>
-							<img src="${downloadUrl}" class="img-responsive" style="margin: auto; margin-bottom: 60px;" />
-						</p>
-					</c:if>
-				</c:forEach>
-			</c:if>
-      
+			<!-- 제목 -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>공지 제목</h3>
+				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="noti_sub" name="noti_sub" value="${getNotice.noti_sub}" placeholder="제목을 입력해주세요.">
+			</div>
+
+			<!-- 영상 url -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>영상 URL</h3>
+				<input style="width: 97%;  margin-top: 2%; margin-left: 3%;" type="text" id="you_url" name="you_url" value="${getNotice.you_url}" placeholder="url이 있다면 입력해 주세요.">
+			</div>
+			
+			<!-- 내용 -->
+			<div class="form-input-box" >
+				<h3 ><span class="icon-green-bar"></span>공지 내용</h3>
+				<textarea style="width: 97%; height:400px; margin-top: 2%; margin-left: 3%;" id="noti_con" rows="noti_con" name="noti_con" wrap="hard" placeholder="내용을 입력해주세요.">${getNotice.noti_con}</textarea>
+			</div>
+			
+			<script type="text/javascript">
+			    
+				var str = document.getElementById("noti_con").value;
+
+				str = str.replace(/(?:<br>)/gi, "\r\n");
+				
+				document.getElementById("noti_con").value = str;
+				
+				function br_insert() {
+					var str = document.getElementById("noti_con").value;
+
+					str = str.replace(/(?:\r\n|\r|\n)/g, '<br>');
+					
+					document.getElementById("noti_con").value = str;
+				}
+			</script>
+			
+			<!-- 파일 업로드 -->
+			<div class="form-input-box file-box  text-right" >
+				<h3 ><span class="icon-green-bar"></span>첨부파일</h3>
+				<label class="text-right" >
+					
+       				<input type="file" accept=".jpg,.png" id="main" name="main" onchange="javascript:document.getElementById('attach_file').value=this.value" multiple>
+				</label>
+				<!-- 첨부파일 리스트가 존재할 경우만 삭제할 항목 선택 가능 -->
+	    <c:if test="${imgList != null}">
+	      <c:forEach var="file" items="${imgList}">
+	        <!-- 이미지를 다운받기 위한 URL구성 -->
+	        <c:url value="/download.do" var="downloadUrl">
+	          <c:param name="file" value="${file.file_dir}/${file.file_name}"/>
+	        </c:url>
+	        
+	        <div class="checkbox">
+	          <label >
+	            <input type="checkbox" name="del_file" id="img_del" value="${file.idx}" />
+	            ${file.origin_name} 삭제하기
+	            
+	          </label>
+	        </div>
+	      </c:forEach>
+	    </c:if>
+			</div>
+
+
+			<!-- 버튼들 -->
+			<div class="content-bottom text-right" style="border-top: 1px solid #E0E0E0; margin-top: 5%;">
+				
+				<button type="button" style="padding-top: 4px; margin-top:10px; width: 150px;height: 40px; border: 0;outline: 0;background-color: #959595; color: white;"  onclick="history.back()">취소</button>
+				<button type="submit"  style="padding-top: 4px; margin-top:10px; width: 150px;height: 40px; border: 0;outline: 0;background-color: #4B9A6A; color: white;" onclick="br_insert()">수정</button>
+			</div>	
+		</form>
+        
         
          
-     </div>
-     <div class="list-cont" style="width: 94%;">
-        <!-- 라인 삭제하고 밑에 주석 해제하면 작동됩니다. (a태그 수정/목록으로 동일, 삭제 변경X) -->
-        <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="/freeboard-update.html">수정</a>
-        <!-- <a style="border-radius: 0px; margin-left:0px;" class="btn green" href="${pageContext.request.contextPath}/notice/admin_edit_notice.do?idx=${getNotice.idx}">수정</a> -->
-        <c:if test="${readPropo.pro_show eq 0}"><a style="border-radius: 0px;" class="btn green" href="${pageContext.request.contextPath}/proposal/admin_blind_proposal.do?idx=${readPropo.idx}" onclick="return confirm('이 제안글을 숨김처리 하시겠습니까?');">숨김</a></c:if>
-        <c:if test="${readPropo.pro_show eq 1}"><a style="border-radius: 0px;" class="btn red" href="${pageContext.request.contextPath}/proposal/admin_show_proposal.do?idx=${readPropo.idx}" onclick="return confirm('숨김처리를 해제 하시겠습니까?');">숨김해제</a></c:if>
-        <a style="border-radius: 0px;" class="btn red" href="${pageContext.request.contextPath}/notice/admin_notice_delete_ok.do?idx=${getNotice.idx}" onclick="return confirm('이 교육글을 삭제 하시겠습니까?');">삭제</a>
+     
+	<div>
 	</div>
-    <div class="right-cont" style="width: 94.3%;">
-        <a style="border-radius: 0px;" class="btn black" href="/freeboard-list.html">목록으로</a>
-        <!-- <a style="border-radius: 0px;" class="btn black" href="${pageContext.request.contextPath}/notice/admin_notice_list.do">목록으로</a> -->
-    </div>
-    </div>
-	<br><br><br><br><br><br>
-	<!-- <div style="border-bottom: 1px solid #4B9A6A; font-size: 15px; font-weight: bold;width: 94%"></div> -->
-        
-        
     </section>
     <div class="cleafix"></div>
     
     
-        <!-- <%@ include file="/WEB-INF/views/inc/footer.jsp" %> -->
+        <%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 </body>
 </html>

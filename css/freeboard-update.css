@@ -1,0 +1,25 @@
+/* 배너 이미지 및 TEXT 중앙정렬 */
+.main_container{
+    background-image: url(../images/gnb-image.png);
+    height:35vw;
+    background-size:cover;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align:center;
+}
+.main-sec-1{
+    font-size:2.5rem;
+    border-bottom:2px solid black;
+}
+
+@media screen and (min-width:768px){
+    .main_container{
+        background-image: url(../images/gnb-image.png);
+        height:12vw;
+        background-size: cover;
+    }
+}
+/*********************************************************/
