@@ -67,3 +67,12 @@ generateHitCount()
       "path=/";
   }
   
+  // function getIP(json) {
+  //   document.getElementById("#tesk");
+  //   document.write("My public IP address is: ", json.ip);
+  // }
+
+  // const date = new Date();
+  // if(json.ip === data.IPv4) {
+  //   date < date(24.0001) ==  
+  // }

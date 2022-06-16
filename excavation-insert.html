@@ -50,8 +50,6 @@
         <div class="navbar__logo">
             <a href="navbar.html" ><img class="nbar" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/top_logo.png"> </a>
             <!-- <a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" ><img class="nbar" style="width: 225px;" alt="천안시 청소년 참여포털 YOUTHTORY" src="./images/youthtory.svg"> </a> -->
-            <span class="total-user"> 총 방문자수 : </span>
-            <span id="hit-counter"></span>
         </div>
         <ul class="navbar__menu">
             <li style="font-size: 19px;"><a href="${pageContext.request.contextPath}/proposal/admin_proposal_list.do" class="nav-main-con">공지/교육</a>
@@ -214,8 +212,15 @@
     </section>
     <div class="cleafix"></div>
     
-    
+    <!-- count IP -->
+    <!-- <script type="application/javascript">
+        function getIP(json) {
+          document.write("My public IP address is: ", json.ip);
+        }
+
+      </script>
+      
+      <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script> -->
         <%@ include file="/WEB-INF/views/inc/footer.jsp" %>
-    <script src="./js/user-count.js"></script>
 </body>
 </html>
